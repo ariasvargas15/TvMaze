@@ -1,0 +1,23 @@
+
+m
+=app/src/main/java/com/bsav157/tvmaze/presenter/Presenter.java,a\1\a1c4cbf1244881d2488c2fead8e7e7db84ad7d59
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+n
+>app/src/main/java/com/bsav157/tvmaze/model/entitites/Show.java,b\f\bfae977292a5725554ca5978ecf38fa3d90f7083
+q
+Aapp/src/main/java/com/bsav157/tvmaze/model/entitites/Episode.java,3\4\3448de0f8de25ba4f1f509b8ee6e6e12b0293405
+o
+?app/src/main/java/com/bsav157/tvmaze/model/entitites/Image.java,7\c\7c223b70292b68ce74f2d74729fbc80268c90fb4
+u
+Eapp/src/main/java/com/bsav157/tvmaze/model/apiservice/ApiService.java,8\6\86c522706b5a7d61c2660f7022e122eeab232a09
+u
+Eapp/src/main/java/com/bsav157/tvmaze/model/apiservice/ApiAdapter.java,0\c\0cb0ddbc8cf46442064de97453b1e9214e915d78
+v
+Fapp/src/main/java/com/bsav157/tvmaze/model/interactors/Interactor.java,0\f\0fdceb42df3a3996002974da36c5442b020dd8d4
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+v
+Fapp/src/main/java/com/bsav157/tvmaze/view/activities/MainActivity.java,3\e\3e74330bedfb628bf37971a43343cad048af0a17
