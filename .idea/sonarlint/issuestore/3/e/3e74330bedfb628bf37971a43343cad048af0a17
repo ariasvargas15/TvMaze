@@ -1,7 +1,17 @@
 
-X	java:S110
-"<This class has 9 parents which is greater than 5 authorized.(²Ú±8¡’·Á.
-S
-java:S1854"6Remove this useless assignment to local variable "in".(ÈÇà8°ıü¹Á.
-D
-java:S1481"'Remove this unused "in" local variable.(ÈÇà8°ıü¹Á.
+Q
+java:S1128"4Remove this unused import 'android.widget.EditText'.(†Å›Ú8»Ã³ÏÁ.
+X	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±8ëñÆÂÁ.
+P
+java:S1128".Remove this unused import 'android.view.View'.(Ø½­äşÿÿÿÿ8éô±ÏÁ.
+W
+java:S1128	"5Remove this unused import 'android.widget.ImageView'.(ú¯ëàüÿÿÿÿ8éô±ÏÁ.
+R
+java:S1128"5Remove this unused import 'android.text.InputFilter'.(Áóøù8éô±ÏÁ.
+n
+java:S1128"LRemove this unused import 'com.bsav157.tvmaze.model.interactors.Interactor'.(şÃ¶£ÿÿÿÿÿ8«°–ĞÁ.
+U
+java:S1128
+"8Remove this unused import 'android.widget.NumberPicker'.( Ø§÷8üåïÍÁ.
+c
+java:S1128"FRemove this unused import 'com.bsav157.tvmaze.view.InputMinMaxFilter'.(ş¾°ğ8éô±ÏÁ.

@@ -21,3 +21,15 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 v
 Fapp/src/main/java/com/bsav157/tvmaze/view/activities/MainActivity.java,3\e\3e74330bedfb628bf37971a43343cad048af0a17
+@
+local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
+p
+@app/src/main/java/com/bsav157/tvmaze/model/entitites/Search.java,c\f\cf13cf4a44c9fc69d8f9d2f0bce804705d792169
+p
+@app/src/main/java/com/bsav157/tvmaze/view/InputMinMaxFilter.java,6\5\6518eb5eaa4a4f01d4a9299610572228c43c32c7
+y
+Iapp/src/main/java/com/bsav157/tvmaze/presenter/interfaces/IListShows.java,3\5\35f1e9745d7a58201a00f10e4951b66f7ec3fcc3
+s
+Capp/src/main/java/com/bsav157/tvmaze/view/adapters/ShowAdapter.java,f\5\f5f9ab3f03d2f4e6515d3c813ec64d1864ef9813
+z
+Japp/src/main/java/com/bsav157/tvmaze/view/fragments/ListShowsFragment.java,c\f\cf6473bef0e62ee0dbd48cd07afb4e534fe0b64d

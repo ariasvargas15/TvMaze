@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">TvMaze</string>
+    <string name="menu_icon_1">Home</string>
+    <string name="menu_icon_2">Search</string>
+    <string name="menu_icon_3">People</string>
+    <string name="menu_icon_4">Settings</string>
+    <string name="menu_icon_5">Favorites</string>
+    <string name="text_paging_scheme_1">Page</string>
+    <string name="text_paging_scheme_2">of 200</string>
+    <integer name="one">1</integer>
+    <string name="search_bar">Search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

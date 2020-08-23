@@ -1,0 +1,17 @@
+
+O
+java:S1128
+"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8™¼íÏÁ.
+o	java:S116"NRename this field "MAX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì¤¡ıøÿÿÿÿ8àÜ¹ÏÁ.
+X
+java:S1854J"6Remove this useless assignment to local variable "in".(û÷òáÿÿÿÿÿ8™ˆûÏÁ.
+C
+java:S1170"!Make this final field static too.(¯Æ¡¨ÿÿÿÿÿ8¡á¸ÏÁ.
+C
+java:S1170"!Make this final field static too.(ì¤¡ıøÿÿÿÿ8¡á¸ÏÁ.
+I
+java:S1481J"'Remove this unused "in" local variable.(û÷òáÿÿÿÿÿ8™ˆûÏÁ.
+p
+java:S1450 "SRemove the "view" field and declare it as a local variable in the relevant methods.(ØÊ»¶8«‹”ĞÁ.
+o	java:S116"NRename this field "MIN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯Æ¡¨ÿÿÿÿÿ8 ¬¹ÏÁ.
+X	java:S125K"<This block of commented-out lines of code should be removed.(½‘Ñ³8™ˆûÏÁ.
