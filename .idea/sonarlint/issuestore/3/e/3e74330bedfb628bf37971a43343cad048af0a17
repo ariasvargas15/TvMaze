@@ -1,17 +1,10 @@
 
-Q
-java:S1128"4Remove this unused import 'android.widget.EditText'.(†Å›Ú8»Ã³ÏÁ.
-X	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž8ëñÆÂÁ.
+O
+java:S1128	"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ÃúñìÁ.
+q
+java:S1128"ORemove this unused import 'com.bsav157.tvmaze.view.fragments.InfoShowFragment'.(–ÅÆ¤üÿÿÿÿ8»™öìÁ.
 P
-java:S1128".Remove this unused import 'android.view.View'.(Ø½­äþÿÿÿÿ8éô±ÏÁ.
+java:S1128".Remove this unused import 'android.view.View'.(Ø½­äþÿÿÿÿ8á±†æÁ.
+]	java:S110"<This class has 9 parents which is greater than 5 authorized.(Ï—³ûÿÿÿÿ8ëñÆÂÁ.
 W
-java:S1128	"5Remove this unused import 'android.widget.ImageView'.(ú¯ëàüÿÿÿÿ8éô±ÏÁ.
-R
-java:S1128"5Remove this unused import 'android.text.InputFilter'.(Áóøù8éô±ÏÁ.
-n
-java:S1128"LRemove this unused import 'com.bsav157.tvmaze.model.interactors.Interactor'.(þÃ¶£ÿÿÿÿÿ8«°–ÐÁ.
-U
-java:S1128
-"8Remove this unused import 'android.widget.NumberPicker'.( Ø§÷8üåïÍÁ.
-c
-java:S1128"FRemove this unused import 'com.bsav157.tvmaze.view.InputMinMaxFilter'.(þ¾°ð8éô±ÏÁ.
+java:S1128"5Remove this unused import 'android.content.ClipData'.(°Žú‚üÿÿÿÿ8ÆïååÁ.

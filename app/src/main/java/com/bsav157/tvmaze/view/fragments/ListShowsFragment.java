@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +21,8 @@ import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Show;
 import com.bsav157.tvmaze.presenter.ListShowsPresenter;
 import com.bsav157.tvmaze.presenter.interfaces.IListShows;
-import com.bsav157.tvmaze.view.InputMinMaxFilter;
-import com.bsav157.tvmaze.view.RecyclerViewOnItemClickListener;
+import com.bsav157.tvmaze.utils.InputMinMaxFilter;
+import com.bsav157.tvmaze.utils.RecyclerViewOnItemClickListener;
 import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 
 import java.util.ArrayList;

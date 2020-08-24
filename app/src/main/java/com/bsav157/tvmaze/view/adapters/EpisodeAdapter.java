@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Episode;
-import com.bsav157.tvmaze.model.entitites.Show;
-import com.bsav157.tvmaze.view.RecyclerViewOnItemClickListener;
+import com.bsav157.tvmaze.utils.RecyclerViewOnItemClickListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,15 +18,11 @@ import android.widget.TextView;
 
 import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Episode;
-import com.bsav157.tvmaze.model.entitites.Image;
-import com.bsav157.tvmaze.model.entitites.Schedule;
 import com.bsav157.tvmaze.model.entitites.Show;
-import com.bsav157.tvmaze.model.interactors.ListEpisodesInteractor;
 import com.bsav157.tvmaze.presenter.ListEpisodesPresenter;
 import com.bsav157.tvmaze.presenter.interfaces.IListEpisodes;
-import com.bsav157.tvmaze.view.RecyclerViewOnItemClickListener;
+import com.bsav157.tvmaze.utils.RecyclerViewOnItemClickListener;
 import com.bsav157.tvmaze.view.adapters.EpisodeAdapter;
-import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

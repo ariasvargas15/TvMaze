@@ -1,4 +1,4 @@
-package com.bsav157.tvmaze.view;
+package com.bsav157.tvmaze.utils;
 
 import android.text.InputFilter;
 import android.text.Spanned;

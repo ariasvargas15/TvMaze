@@ -22,7 +22,7 @@ import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Show;
 import com.bsav157.tvmaze.presenter.SearchPresenter;
 import com.bsav157.tvmaze.presenter.interfaces.ISearchShow;
-import com.bsav157.tvmaze.view.RecyclerViewOnItemClickListener;
+import com.bsav157.tvmaze.utils.RecyclerViewOnItemClickListener;
 import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 
 import java.util.ArrayList;

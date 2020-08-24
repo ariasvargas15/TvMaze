@@ -5,21 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.bsav157.tvmaze.R;
-import com.bsav157.tvmaze.view.fragments.InfoShowFragment;
 import com.bsav157.tvmaze.view.fragments.ListShowsFragment;
 import com.bsav157.tvmaze.view.fragments.QueryFragment;
+import com.bsav157.tvmaze.view.fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
 
-    BottomNavigationView nav;
+    private BottomNavigationView nav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         nav.setOnNavigationItemSelectedListener(this);
 
     }
+
 
     private void inflateFragment(Fragment fragment){
         getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commit();
@@ -44,8 +46,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.page_2:
                 inflateFragment(new QueryFragment());
                 return true;
+            case R.id.page_4:
+                inflateFragment(new SettingsFragment());
             default:
                 return false;
         }
     }
+
 }

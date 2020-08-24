@@ -1,6 +1,4 @@
 
-m
-=app/src/main/java/com/bsav157/tvmaze/presenter/Presenter.java,a\1\a1c4cbf1244881d2488c2fead8e7e7db84ad7d59
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 @
@@ -15,8 +13,6 @@ u
 Eapp/src/main/java/com/bsav157/tvmaze/model/apiservice/ApiService.java,8\6\86c522706b5a7d61c2660f7022e122eeab232a09
 u
 Eapp/src/main/java/com/bsav157/tvmaze/model/apiservice/ApiAdapter.java,0\c\0cb0ddbc8cf46442064de97453b1e9214e915d78
-v
-Fapp/src/main/java/com/bsav157/tvmaze/model/interactors/Interactor.java,0\f\0fdceb42df3a3996002974da36c5442b020dd8d4
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 v
@@ -33,3 +29,31 @@ s
 Capp/src/main/java/com/bsav157/tvmaze/view/adapters/ShowAdapter.java,f\5\f5f9ab3f03d2f4e6515d3c813ec64d1864ef9813
 z
 Japp/src/main/java/com/bsav157/tvmaze/view/fragments/ListShowsFragment.java,c\f\cf6473bef0e62ee0dbd48cd07afb4e534fe0b64d
+z
+Japp/src/main/java/com/bsav157/tvmaze/presenter/interfaces/ISearchShow.java,9\4\942537ab6b2f1920a12d7c78c0976451d79c0514
+s
+Capp/src/main/java/com/bsav157/tvmaze/presenter/SearchPresenter.java,8\7\87fa26266d78ccfbbd2c023f1314d455bb0f5962
+|
+Lapp/src/main/java/com/bsav157/tvmaze/model/interactors/SearchInteractor.java,c\e\cee64978501c57224ed95a013aad7cfb4be849f0
+r
+Bapp/src/main/java/com/bsav157/tvmaze/model/entitites/Schedule.java,b\5\b50fb5c7ce27f5a99a6bc83c7d3f512e2174b04b
+v
+Fapp/src/main/java/com/bsav157/tvmaze/presenter/ListShowsPresenter.java,b\b\bb1485ba6cd0666c61344a785b1ecd0c694ef53e
+
+Oapp/src/main/java/com/bsav157/tvmaze/model/interactors/ListShowsInteractor.java,9\8\983bc121c76dec6cd726963bf1b3d41ed0af8c45
+|
+Lapp/src/main/java/com/bsav157/tvmaze/presenter/interfaces/IListEpisodes.java,c\0\c04a5c28f596c8d7f1c6fc90cfcf4ecc440d3ad3
+v
+Fapp/src/main/java/com/bsav157/tvmaze/view/fragments/QueryFragment.java,1\f\1f2bf0b39862d7e95d33258c4f8a7129e13353eb
+~
+Napp/src/main/java/com/bsav157/tvmaze/view/RecyclerViewOnItemClickListener.java,7\c\7c88288b3e1251c989faa64486aa0cf908fb1332
+y
+Iapp/src/main/java/com/bsav157/tvmaze/presenter/ListEpisodesPresenter.java,c\6\c666421278944c9872b8b37b3ebc9961bbcc0012
+v
+Fapp/src/main/java/com/bsav157/tvmaze/view/adapters/EpisodeAdapter.java,8\b\8bf427986e0b94b2944c742e34f9f31dcf422477
+‚
+Rapp/src/main/java/com/bsav157/tvmaze/model/interactors/ListEpisodesInteractor.java,3\0\30f91aca5ab051d62419545f3197c0798fe0e5fc
+y
+Iapp/src/main/java/com/bsav157/tvmaze/view/fragments/InfoShowFragment.java,4\0\402ff2487dd664cd56f61a3431f8660a5a9b3bf9
+|
+Lapp/src/main/java/com/bsav157/tvmaze/view/fragments/InfoEpisodeFragment.java,d\0\d0ef43da3c33e88a2feb65f8cee4223882b0c4c0
