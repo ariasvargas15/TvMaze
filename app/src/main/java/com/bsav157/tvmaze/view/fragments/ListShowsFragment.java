@@ -4,12 +4,14 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ import com.bsav157.tvmaze.model.entitites.Show;
 import com.bsav157.tvmaze.presenter.ListShowsPresenter;
 import com.bsav157.tvmaze.presenter.interfaces.IListShows;
 import com.bsav157.tvmaze.view.InputMinMaxFilter;
+import com.bsav157.tvmaze.view.RecyclerViewOnItemClickListener;
 import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 
 import java.util.ArrayList;
@@ -70,10 +73,19 @@ public class ListShowsFragment extends Fragment implements IListShows.View, View
     }
 
     @Override
-    public void showList(ArrayList<Show> shows) {
+    public void showList(final ArrayList<Show> shows) {
         GridLayoutManager grid = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(grid);
-        ShowAdapter adapter = new ShowAdapter(shows);
+        ShowAdapter adapter = new ShowAdapter(shows, new RecyclerViewOnItemClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Fragment fragment = InfoShowFragment.newInstance(shows.get(position));
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.content, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
         recycler.setAdapter(adapter);
         dialog.dismiss();
     }

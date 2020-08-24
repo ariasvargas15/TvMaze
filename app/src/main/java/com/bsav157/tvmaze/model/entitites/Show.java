@@ -25,9 +25,9 @@ public class Show implements Serializable {
     @SerializedName("genres")
     @Expose
     private List<String> genres = null;
-    @SerializedName("premiered")
+    @SerializedName("runtime")
     @Expose
-    private String premiered;
+    private Integer runtime;
     @SerializedName("officialSite")
     @Expose
     private String officialSite;
@@ -37,6 +37,10 @@ public class Show implements Serializable {
     @SerializedName("summary")
     @Expose
     private String summary;
+    @SerializedName("schedule")
+    @Expose
+    private Schedule schedule;
+
 
     public Integer getId() {
         return id;
@@ -86,12 +90,12 @@ public class Show implements Serializable {
         this.genres = genres;
     }
 
-    public String getPremiered() {
-        return premiered;
+    public Integer getRuntime() {
+        return runtime;
     }
 
-    public void setPremiered(String premiered) {
-        this.premiered = premiered;
+    public void setRuntime(Integer runtime) {
+        this.runtime = runtime;
     }
 
     public String getOfficialSite() {
@@ -118,6 +122,14 @@ public class Show implements Serializable {
         this.summary = summary;
     }
 
+    public Schedule getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(Schedule schedule) {
+        this.schedule = schedule;
+    }
+
     @Override
     public String toString() {
         return "Show{" +
@@ -127,10 +139,11 @@ public class Show implements Serializable {
                 ", type='" + type + '\'' +
                 ", language='" + language + '\'' +
                 ", genres=" + genres +
-                ", premiered='" + premiered + '\'' +
+                ", runtime='" + runtime + '\'' +
                 ", officialSite='" + officialSite + '\'' +
                 ", image=" + image +
                 ", summary='" + summary + '\'' +
+                ", schedule=" + schedule +
                 '}';
     }
 }

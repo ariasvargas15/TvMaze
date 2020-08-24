@@ -6,10 +6,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Show;
+import com.bsav157.tvmaze.view.RecyclerViewOnItemClickListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -17,9 +19,11 @@ import java.util.ArrayList;
 public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowViewHolder>{
 
     private ArrayList<Show> shows;
+    private RecyclerViewOnItemClickListener recycler;
 
-    public ShowAdapter(ArrayList<Show> shows) {
+    public ShowAdapter(ArrayList<Show> shows, @NonNull RecyclerViewOnItemClickListener recycler) {
         this.shows = shows;
+        this.recycler = recycler;
     }
 
     @Override
@@ -46,7 +50,7 @@ public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowViewHolder
         return shows.size();
     }
 
-    static class ShowViewHolder extends RecyclerView.ViewHolder{
+     class ShowViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private ImageView image;
         private TextView name;
@@ -55,6 +59,12 @@ public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowViewHolder
             super(itemView);
             image = itemView.findViewById(R.id.show_image);
             name = itemView.findViewById(R.id.show_name);
+            itemView.setOnClickListener(this);
+        }
+
+         @Override
+         public void onClick(View v) {
+            recycler.onClick(v, getAdapterPosition());
         }
     }
 }

@@ -22,6 +22,7 @@ import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Show;
 import com.bsav157.tvmaze.presenter.SearchPresenter;
 import com.bsav157.tvmaze.presenter.interfaces.ISearchShow;
+import com.bsav157.tvmaze.view.RecyclerViewOnItemClickListener;
 import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 
 import java.util.ArrayList;
@@ -53,6 +54,7 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
         SpotsDialog.Builder sp = new SpotsDialog.Builder();
         sp.setContext(getContext()).setCancelable(false).setMessage("Loading...");
         dialog = sp.build();
+
         return view;
     }
 
@@ -71,10 +73,16 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
     }
 
     @Override
-    public void showSearch(ArrayList<Show> shows) {
+    public void showSearch(final ArrayList<Show> shows) {
         GridLayoutManager grid = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(grid);
-        ShowAdapter adapter = new ShowAdapter(shows);
+        ShowAdapter adapter = new ShowAdapter(shows, new RecyclerViewOnItemClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                searchEditText.setText("");
+                getFragmentManager().beginTransaction().replace(R.id.content, InfoShowFragment.newInstance(shows.get(position))).addToBackStack(null).commit();
+            }
+        });
         recycler.setAdapter(adapter);
         dialog.dismiss();
     }
