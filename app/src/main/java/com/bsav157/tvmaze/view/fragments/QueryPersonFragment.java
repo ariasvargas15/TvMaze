@@ -20,13 +20,10 @@ import android.widget.TextView;
 
 import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Person;
-import com.bsav157.tvmaze.model.entitites.Show;
 import com.bsav157.tvmaze.presenter.SearchPersonPresenter;
-import com.bsav157.tvmaze.presenter.SearchPresenter;
 import com.bsav157.tvmaze.presenter.interfaces.ISearchPerson;
 import com.bsav157.tvmaze.utils.RecyclerViewOnItemClickListener;
 import com.bsav157.tvmaze.view.adapters.PersonAdapter;
-import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 
 import java.util.ArrayList;
 
@@ -66,6 +63,7 @@ public class QueryPersonFragment extends Fragment implements ISearchPerson.View,
         boolean action = false;
         if (i == EditorInfo.IME_ACTION_SEARCH) {
             InputMethodManager inputMethodManager = (InputMethodManager) textView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            assert inputMethodManager != null;
             inputMethodManager.hideSoftInputFromWindow(textView.getWindowToken(), 0);
             dialog.show();
             presenter.makeQuery(searchEditText.getText().toString());
@@ -82,6 +80,7 @@ public class QueryPersonFragment extends Fragment implements ISearchPerson.View,
             @Override
             public void onClick(View v, int position) {
                 searchEditText.setText("");
+                assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.content, InfoPeopleFragment.newInstance(people.get(position))).addToBackStack(null).commit();
             }
         });

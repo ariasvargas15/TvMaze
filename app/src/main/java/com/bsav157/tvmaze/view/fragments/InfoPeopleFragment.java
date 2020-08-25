@@ -18,12 +18,9 @@ import android.widget.TextView;
 import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Person;
 import com.bsav157.tvmaze.model.entitites.Show;
-import com.bsav157.tvmaze.model.interactors.ListCastsInteractor;
 import com.bsav157.tvmaze.presenter.ListCastsPresenter;
-import com.bsav157.tvmaze.presenter.ListEpisodesPresenter;
 import com.bsav157.tvmaze.presenter.interfaces.IListCasts;
 import com.bsav157.tvmaze.utils.RecyclerViewOnItemClickListener;
-import com.bsav157.tvmaze.view.adapters.PersonAdapter;
 import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 import com.squareup.picasso.Picasso;
 
@@ -31,13 +28,6 @@ import java.util.ArrayList;
 
 import dmax.dialog.SpotsDialog;
 
-import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link InfoPeopleFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class InfoPeopleFragment extends Fragment implements IListCasts.View {
 
     private Person person;
@@ -108,6 +98,7 @@ public class InfoPeopleFragment extends Fragment implements IListCasts.View {
         ShowAdapter adapter = new ShowAdapter(show, new RecyclerViewOnItemClickListener() {
             @Override
             public void onClick(View v, int position) {
+                assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.content, InfoShowFragment.newInstance(show.get(position))).addToBackStack(null).commit();
             }
         });

@@ -1,6 +1,5 @@
 package com.bsav157.tvmaze.presenter;
 
-import com.bsav157.tvmaze.model.entitites.Search;
 import com.bsav157.tvmaze.model.entitites.Show;
 import com.bsav157.tvmaze.model.interactors.SearchInteractor;
 import com.bsav157.tvmaze.presenter.interfaces.ISearchShow;

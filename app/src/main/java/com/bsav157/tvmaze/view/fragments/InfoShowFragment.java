@@ -137,6 +137,7 @@ public class InfoShowFragment extends Fragment implements IListEpisodes.View {
             @Override
             public void onClick(View v, int position) {
                 Fragment fragment = InfoEpisodeFragment.newInstance(episodes.get(position));
+                assert getFragmentManager() != null;
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.content, fragment);
                 transaction.addToBackStack(null);

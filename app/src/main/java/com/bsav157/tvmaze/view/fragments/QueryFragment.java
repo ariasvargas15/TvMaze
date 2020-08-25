@@ -63,6 +63,7 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
         boolean action = false;
         if (i == EditorInfo.IME_ACTION_SEARCH) {
             InputMethodManager inputMethodManager = (InputMethodManager) textView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            assert inputMethodManager != null;
             inputMethodManager.hideSoftInputFromWindow(textView.getWindowToken(), 0);
 
             dialog.show();
@@ -80,6 +81,7 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
             @Override
             public void onClick(View v, int position) {
                 searchEditText.setText("");
+                assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.content, InfoShowFragment.newInstance(shows.get(position))).addToBackStack(null).commit();
             }
         });

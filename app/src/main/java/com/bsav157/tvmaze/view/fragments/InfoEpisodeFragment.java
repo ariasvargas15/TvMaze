@@ -16,15 +16,9 @@ import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Episode;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
-
 import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link InfoEpisodeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class InfoEpisodeFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "episode";

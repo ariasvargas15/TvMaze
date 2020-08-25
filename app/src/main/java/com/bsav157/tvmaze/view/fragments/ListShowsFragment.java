@@ -32,8 +32,8 @@ import dmax.dialog.SpotsDialog;
 public class ListShowsFragment extends Fragment implements IListShows.View, View.OnClickListener {
 
     private EditText et;
-    private final int MIN = 1;
-    private final int MAX = 200;
+    private static final int MIN = 1;
+    private static final int MAX = 200;
     private RecyclerView recycler;
     private ImageView dec;
     private ImageView inc;
@@ -79,6 +79,7 @@ public class ListShowsFragment extends Fragment implements IListShows.View, View
             @Override
             public void onClick(View v, int position) {
                 Fragment fragment = InfoShowFragment.newInstance(shows.get(position));
+                assert getFragmentManager() != null;
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.content, fragment);
                 transaction.addToBackStack(null);

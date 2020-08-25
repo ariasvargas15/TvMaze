@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.bsav157.tvmaze.R;
-import com.bsav157.tvmaze.presenter.LoginPresenter;
 import com.bsav157.tvmaze.presenter.SettingsPresenter;
 import com.bsav157.tvmaze.presenter.interfaces.ISettings;
 import com.bsav157.tvmaze.utils.Defines;
@@ -43,7 +42,6 @@ public class SettingsFragment extends Fragment implements ISettings.View, View.O
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         lastP = view.findViewById(R.id.last_password);
         newP = view.findViewById(R.id.new_password);
