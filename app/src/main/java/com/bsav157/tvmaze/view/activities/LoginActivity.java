@@ -65,8 +65,7 @@ public class LoginActivity extends AppCompatActivity implements ILogin.View, Vie
                     public void onAuthenticationSucceeded(
                             @NonNull BiometricPrompt.AuthenticationResult result) {
                         super.onAuthenticationSucceeded(result);
-                        Intent in = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(in);
+                        openMainActivity();
                     }
 
                     @Override
@@ -104,9 +103,15 @@ public class LoginActivity extends AppCompatActivity implements ILogin.View, Vie
         if(!response){
             message.setText(getResources().getString(R.string.message_password_incorrect));
         } else {
-            Intent in = new Intent(this, MainActivity.class);
-            startActivity(in);
+            openMainActivity();
         }
+    }
+
+    private void openMainActivity(){
+        Intent in = new Intent(this, MainActivity.class);
+        in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(in);
+        finish();
     }
 
     @Override

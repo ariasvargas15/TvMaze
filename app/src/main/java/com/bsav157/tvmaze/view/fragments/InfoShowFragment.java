@@ -32,11 +32,7 @@ import dmax.dialog.SpotsDialog;
 
 import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link InfoShowFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class InfoShowFragment extends Fragment implements IListEpisodes.View {
 
     private Show show;

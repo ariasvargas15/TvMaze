@@ -1,8 +1,10 @@
 package com.bsav157.tvmaze.model.apiservice;
 
 
+import com.bsav157.tvmaze.model.entitites.CastCredit;
 import com.bsav157.tvmaze.model.entitites.Episode;
 import com.bsav157.tvmaze.model.entitites.Search;
+import com.bsav157.tvmaze.model.entitites.SearchPerson;
 import com.bsav157.tvmaze.model.entitites.Show;
 
 import java.util.List;
@@ -22,5 +24,11 @@ public interface ApiService {
 
     @GET("shows/{id}/episodes")
     Call<List<Episode>> getEpisodes(@Path("id") int id);
+
+    @GET("search/people")
+    Call<List<SearchPerson>> getPeople(@Query("q") String query);
+
+    @GET("people/{id}/castcredits?embed=show")
+    Call<List<CastCredit>> getCastCredits(@Path("id") int id);
 
 }

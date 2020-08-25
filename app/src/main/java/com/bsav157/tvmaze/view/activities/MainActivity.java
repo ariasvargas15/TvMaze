@@ -14,6 +14,7 @@ import android.view.View;
 import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.view.fragments.ListShowsFragment;
 import com.bsav157.tvmaze.view.fragments.QueryFragment;
+import com.bsav157.tvmaze.view.fragments.QueryPersonFragment;
 import com.bsav157.tvmaze.view.fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -46,8 +47,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.page_2:
                 inflateFragment(new QueryFragment());
                 return true;
+            case R.id.page_3:
+                inflateFragment(new QueryPersonFragment());
+                return true;
             case R.id.page_4:
                 inflateFragment(new SettingsFragment());
+                return true;
             default:
                 return false;
         }

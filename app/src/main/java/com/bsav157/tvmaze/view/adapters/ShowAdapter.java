@@ -57,8 +57,8 @@ public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowViewHolder
 
         public ShowViewHolder(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.show_image);
-            name = itemView.findViewById(R.id.show_name);
+            image = itemView.findViewById(R.id.item_image);
+            name = itemView.findViewById(R.id.item_name);
             itemView.setOnClickListener(this);
         }
 

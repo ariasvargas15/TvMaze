@@ -1,0 +1,16 @@
+
+X	java:S110"<This class has 9 parents which is greater than 5 authorized.(’Ğçü8Âã’Â.
+C	java:S1315""Add a default case to this switch.(´–òûÿÿÿÿ8¯–ñ’Â.
+O
+java:S1128
+"-Remove this unused import 'android.os.Build'.(ãÇ¤Úıÿÿÿÿ8Âã’Â.
+r
+java:S1450"URemove the "button" field and declare it as a local variable in the relevant methods.(ÈòÉ¹8Âã’Â.
+h
+java:S11927"KDefine a constant instead of duplicating this literal "MY_APP_TAG" 4 times.(¥ñÕ×8¯–ñ’Â.
+v
+java:S1450!"YRemove the "promptInfo" field and declare it as a local variable in the relevant methods.(š¦«™8¯–ñ’Â.
+{
+java:S1450 "^Remove the "biometricPrompt" field and declare it as a local variable in the relevant methods.(’ŠÃÊ8¯–ñ’Â.
+t
+java:S1450"WRemove the "executor" field and declare it as a local variable in the relevant methods.(äü¥ 8¯–ñ’Â.

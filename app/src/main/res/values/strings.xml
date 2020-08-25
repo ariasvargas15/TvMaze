@@ -25,5 +25,6 @@
     <string name="change_password_success">Password changed successfully</string>
     <string name="last_password_incorrect">Last password is incorrect</string>
     <string name="password_short">Password too short</string>
+    <string name="series_has_participated">Series where they have participated</string>
 
 </resources>

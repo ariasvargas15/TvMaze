@@ -19,10 +19,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bsav157.tvmaze.R;
+import com.bsav157.tvmaze.model.entitites.Person;
 import com.bsav157.tvmaze.model.entitites.Show;
+import com.bsav157.tvmaze.presenter.SearchPersonPresenter;
 import com.bsav157.tvmaze.presenter.SearchPresenter;
-import com.bsav157.tvmaze.presenter.interfaces.ISearchShow;
+import com.bsav157.tvmaze.presenter.interfaces.ISearchPerson;
 import com.bsav157.tvmaze.utils.RecyclerViewOnItemClickListener;
+import com.bsav157.tvmaze.view.adapters.PersonAdapter;
 import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 
 import java.util.ArrayList;
@@ -30,14 +33,14 @@ import java.util.ArrayList;
 import dmax.dialog.SpotsDialog;
 
 
-public class QueryFragment extends Fragment implements ISearchShow.View, TextView.OnEditorActionListener{
+public class QueryPersonFragment extends Fragment implements ISearchPerson.View, TextView.OnEditorActionListener {
 
-    private SearchPresenter presenter;
+    private SearchPersonPresenter presenter;
     private EditText searchEditText;
     private RecyclerView recycler;
     private AlertDialog dialog;
 
-    public QueryFragment() {
+    public QueryPersonFragment() {
         // Required empty public constructor
     }
     @Override
@@ -49,7 +52,7 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
         searchEditText.setOnEditorActionListener(this);
         recycler = view.findViewById(R.id.list_search);
 
-        presenter = new SearchPresenter(this);
+        presenter = new SearchPersonPresenter(this);
 
         SpotsDialog.Builder sp = new SpotsDialog.Builder();
         sp.setContext(getContext()).setCancelable(false).setMessage("Loading...");
@@ -64,7 +67,6 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
         if (i == EditorInfo.IME_ACTION_SEARCH) {
             InputMethodManager inputMethodManager = (InputMethodManager) textView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(textView.getWindowToken(), 0);
-
             dialog.show();
             presenter.makeQuery(searchEditText.getText().toString());
             action = true;
@@ -73,14 +75,14 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
     }
 
     @Override
-    public void showSearch(final ArrayList<Show> shows) {
+    public void showSearch(final ArrayList<Person> people) {
         GridLayoutManager grid = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(grid);
-        ShowAdapter adapter = new ShowAdapter(shows, new RecyclerViewOnItemClickListener() {
+        PersonAdapter adapter = new PersonAdapter(people, new RecyclerViewOnItemClickListener() {
             @Override
             public void onClick(View v, int position) {
                 searchEditText.setText("");
-                getFragmentManager().beginTransaction().replace(R.id.content, InfoShowFragment.newInstance(shows.get(position))).addToBackStack(null).commit();
+                getFragmentManager().beginTransaction().replace(R.id.content, InfoPeopleFragment.newInstance(people.get(position))).addToBackStack(null).commit();
             }
         });
         recycler.setAdapter(adapter);
