@@ -27,14 +27,16 @@ import com.bsav157.tvmaze.view.adapters.PersonAdapter;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import dmax.dialog.SpotsDialog;
 
 
 public class QueryPersonFragment extends Fragment implements ISearchPerson.View, TextView.OnEditorActionListener {
 
     private SearchPersonPresenter presenter;
-    private EditText searchEditText;
-    private RecyclerView recycler;
+    @BindView(R.id.search) EditText searchEditText;
+    @BindView(R.id.list_search) RecyclerView recycler;
     private AlertDialog dialog;
 
     public QueryPersonFragment() {
@@ -44,10 +46,10 @@ public class QueryPersonFragment extends Fragment implements ISearchPerson.View,
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_query, container, false);
-        searchEditText = view.findViewById(R.id.search);
+        ButterKnife.bind(this, view);
+
         searchEditText.setInputType(InputType.TYPE_CLASS_TEXT);
         searchEditText.setOnEditorActionListener(this);
-        recycler = view.findViewById(R.id.list_search);
 
         presenter = new SearchPersonPresenter(this);
 

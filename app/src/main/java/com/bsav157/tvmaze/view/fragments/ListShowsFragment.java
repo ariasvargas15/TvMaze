@@ -27,16 +27,19 @@ import com.bsav157.tvmaze.view.adapters.ShowAdapter;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import dmax.dialog.SpotsDialog;
 
 public class ListShowsFragment extends Fragment implements IListShows.View, View.OnClickListener {
 
-    private EditText et;
     private static final int MIN = 1;
     private static final int MAX = 200;
-    private RecyclerView recycler;
-    private ImageView dec;
-    private ImageView inc;
+
+    @BindView(R.id.number_picker) EditText et;
+    @BindView(R.id.list_shows) RecyclerView recycler;
+    @BindView(R.id.decrement_number) ImageView dec;
+    @BindView(R.id.increment_number) ImageView inc;
     private AlertDialog dialog;
     private ListShowsPresenter presenter;
 
@@ -48,14 +51,10 @@ public class ListShowsFragment extends Fragment implements IListShows.View, View
     public android.view.View onCreateView(LayoutInflater inflater, ViewGroup container,
                                           Bundle savedInstanceState) {
         android.view.View view = inflater.inflate(R.layout.fragment_list_shows, container, false);
+        ButterKnife.bind(this, view);
 
-        et = view.findViewById(R.id.number_picker);
         et.setFilters(new InputFilter[]{ new InputMinMaxFilter(MIN, MAX)});
         et.setEnabled(false);
-
-        dec = view.findViewById(R.id.decrement_number);
-        inc = view.findViewById(R.id.increment_number);
-        recycler = view.findViewById(R.id.list_shows);
 
         dec.setOnClickListener(this);
         inc.setOnClickListener(this);

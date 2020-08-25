@@ -23,16 +23,19 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Objects;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class SettingsFragment extends Fragment implements ISettings.View, View.OnClickListener {
 
-    private TextInputEditText lastP;
-    private TextInputEditText newP;
-    private TextInputEditText confirmP;
-    private TextInputLayout layoutP;
-    private Button button;
-    private TextView message;
+    @BindView(R.id.last_password) TextInputEditText lastP;
+    @BindView(R.id.new_password) TextInputEditText newP;
+    @BindView(R.id.confirm_password) TextInputEditText confirmP;
+    @BindView(R.id.layout_last_password) TextInputLayout layoutP;
+    @BindView(R.id.button_settings_password) Button button;
+    @BindView(R.id.message_settings) TextView message;
+    @BindView(R.id.settings_header_text) TextView header;
     private SettingsPresenter presenter;
-    private TextView header;
     private boolean lastIsVisible;
 
     public SettingsFragment() {
@@ -43,21 +46,13 @@ public class SettingsFragment extends Fragment implements ISettings.View, View.O
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
-        lastP = view.findViewById(R.id.last_password);
-        newP = view.findViewById(R.id.new_password);
-        confirmP = view.findViewById(R.id.confirm_password);
-        button = view.findViewById(R.id.button_settings_password);
-        layoutP = view.findViewById(R.id.layout_last_password);
+        ButterKnife.bind(this, view);
         button.setEnabled(false);
         confirmP.setEnabled(false);
-        message = view.findViewById(R.id.message_settings);
-        header = view.findViewById(R.id.settings_header_text);
         setViews();
         checkMinLenght();
         presenter = new SettingsPresenter(this);
-
         button.setOnClickListener(this);
-
         return view;
     }
 

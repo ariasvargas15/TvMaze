@@ -28,6 +28,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import dmax.dialog.SpotsDialog;
 
 import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
@@ -37,12 +39,12 @@ public class InfoShowFragment extends Fragment implements IListEpisodes.View {
 
     private Show show;
     private static final String ARG_PARAM1 = "show";
-    private TextView name;
-    private ImageView image;
-    private TextView summary;
-    private TextView onAir;
-    private TextView genres;
-    private RecyclerView recycler;
+    @BindView(R.id.name) TextView name;
+    @BindView(R.id.image) ImageView image;
+    @BindView(R.id.summary) TextView summary;
+    @BindView(R.id.on_air) TextView onAir;
+    @BindView(R.id.genres) TextView genres;
+    @BindView(R.id.episodes) RecyclerView recycler;
     private AlertDialog dialog;
 
     public InfoShowFragment() {
@@ -69,14 +71,7 @@ public class InfoShowFragment extends Fragment implements IListEpisodes.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_info_show, container, false);
-
-        name = view.findViewById(R.id.name);
-        image = view.findViewById(R.id.image);
-        summary = view.findViewById(R.id.summary);
-        onAir = view.findViewById(R.id.on_air);
-        genres = view.findViewById(R.id.genres);
-        recycler = view.findViewById(R.id.episodes);
-
+        ButterKnife.bind(this, view);
 
         SpotsDialog.Builder sp = new SpotsDialog.Builder();
         sp.setContext(getContext()).setCancelable(false).setMessage("Loading...");

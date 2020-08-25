@@ -16,6 +16,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowViewHolder>{
 
     private ArrayList<Show> shows;
@@ -52,13 +55,12 @@ public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowViewHolder
 
      class ShowViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        private ImageView image;
-        private TextView name;
+         @BindView(R.id.item_image) ImageView image;
+         @BindView(R.id.item_name) TextView name;
 
         public ShowViewHolder(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.item_image);
-            name = itemView.findViewById(R.id.item_name);
+            ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
         }
 

@@ -21,27 +21,25 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.concurrent.Executor;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class LoginActivity extends AppCompatActivity implements ILogin.View, View.OnClickListener {
 
-    private TextInputEditText input;
-    private Button button;
-    private TextView message;
+    @BindView(R.id.password) TextInputEditText input;
+    @BindView(R.id.login_button) Button button;
+    @BindView(R.id.message_info_login) TextView message;
     private LoginPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
         launchBiometricManager();
-
-        input = findViewById(R.id.password);
-        button = findViewById(R.id.login_button);
-        message = findViewById(R.id.message_info_login);
         presenter = new LoginPresenter(this);
-
         button.setOnClickListener(this);
-
     }
 
     private void launchBiometricManager() {

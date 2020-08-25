@@ -16,6 +16,9 @@ import com.bsav157.tvmaze.R;
 import com.bsav157.tvmaze.model.entitites.Episode;
 import com.squareup.picasso.Picasso;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
 
 
@@ -23,11 +26,11 @@ public class InfoEpisodeFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "episode";
     private Episode episode;
-    private TextView name;
-    private ImageView image;
-    private TextView summary;
-    private TextView season;
-    private TextView number;
+    @BindView(R.id.name_episode_details) TextView name;
+    @BindView(R.id.image_episode_details) ImageView image;
+    @BindView(R.id.summary_episode) TextView summary;
+    @BindView(R.id.season) TextView season;
+    @BindView(R.id.number) TextView number;
 
     public InfoEpisodeFragment() {
         // Required empty public constructor
@@ -53,12 +56,7 @@ public class InfoEpisodeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_info_episode, container, false);
-        name = view.findViewById(R.id.name_episode_details);
-        image = view.findViewById(R.id.image_episode_details);
-        number = view.findViewById(R.id.number);
-        season = view.findViewById(R.id.season);
-        summary = view.findViewById(R.id.summary_episode);
-
+        ButterKnife.bind(this, view);
         setViews();
         return view;
     }

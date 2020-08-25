@@ -26,15 +26,17 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import dmax.dialog.SpotsDialog;
 
 public class InfoPeopleFragment extends Fragment implements IListCasts.View {
 
     private Person person;
     private static final String ARG_PARAM1 = "person";
-    private TextView name;
-    private ImageView image;
-    private RecyclerView recycler;
+    @BindView(R.id.name_person) TextView name;
+    @BindView(R.id.image_person) ImageView image;
+    @BindView(R.id.shows_person_acts) RecyclerView recycler;
     private AlertDialog dialog;
 
     public InfoPeopleFragment() {
@@ -62,10 +64,7 @@ public class InfoPeopleFragment extends Fragment implements IListCasts.View {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_info_people, container, false);
-
-        name = view.findViewById(R.id.name_person);
-        image = view.findViewById(R.id.image_person);
-        recycler = view.findViewById(R.id.shows_person_acts);
+        ButterKnife.bind(this, view);
 
 
         SpotsDialog.Builder sp = new SpotsDialog.Builder();
