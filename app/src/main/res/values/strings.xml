@@ -26,5 +26,7 @@
     <string name="last_password_incorrect">Last password is incorrect</string>
     <string name="password_short">Password too short</string>
     <string name="series_has_participated">Series where they have participated</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

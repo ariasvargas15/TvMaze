@@ -40,6 +40,7 @@ public class Show implements Serializable {
     @SerializedName("schedule")
     @Expose
     private Schedule schedule;
+    private boolean selected;
 
 
     public Integer getId() {
@@ -128,6 +129,14 @@ public class Show implements Serializable {
 
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 
     @Override

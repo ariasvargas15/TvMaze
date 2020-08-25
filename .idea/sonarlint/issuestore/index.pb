@@ -105,3 +105,23 @@ Eapp/src/main/java/com/bsav157/tvmaze/view/adapters/PersonAdapter.java,1\8\18fd
 Kapp/src/main/java/com/bsav157/tvmaze/view/fragments/InfoPeopleFragment.java,b\d\bdb8d4de307eac5ee52ae7a9131090a2ba5fbd2e
 |
 Lapp/src/main/java/com/bsav157/tvmaze/view/fragments/QueryPersonFragment.java,6\e\6e439c609442a4c028163175d3a8f789262e81d4
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+t
+Dapp/src/main/java/com/bsav157/tvmaze/model/database/FavoriteDao.java,2\1\212636cad7fecec147f465ca4bdb2b3b978a0aca
+y
+Iapp/src/main/java/com/bsav157/tvmaze/model/database/FavoriteDatabase.java,e\4\e421e9f589ac55c016225af504127d553f290e56
+t
+Dapp/src/main/java/com/bsav157/tvmaze/model/database/FavoriteDto.java,5\2\52d8548129f1aa68c6cf537d8c9f83c87a4c6dd7
+}
+Mapp/src/main/java/com/bsav157/tvmaze/presenter/interfaces/IListFavorites.java,d\e\de934c11b46912cfee82261745eb38a66d378778
+y
+Iapp/src/main/java/com/bsav157/tvmaze/view/fragments/FavoriteFragment.java,9\7\979dd7ea76911dd0c39b618e3946db2edeab884b
+r
+Bapp/src/main/java/com/bsav157/tvmaze/model/entitites/Favorite.java,c\7\c7ab1e2516c6d95f6d979723ba904b15544c5db6
+z
+Japp/src/main/java/com/bsav157/tvmaze/presenter/ListFavoritesPresenter.java,e\f\ef64b90ced78582ee8a4410ffb50193efd2f3881
+ƒ
+Sapp/src/main/java/com/bsav157/tvmaze/model/interactors/ListFavoritesInteractor.java,0\e\0e101e57cc5eb98aac8e5dade0464759212ff45a

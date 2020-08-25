@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.bsav157.tvmaze.R;
+import com.bsav157.tvmaze.view.fragments.FavoriteFragment;
 import com.bsav157.tvmaze.view.fragments.ListShowsFragment;
 import com.bsav157.tvmaze.view.fragments.QueryFragment;
 import com.bsav157.tvmaze.view.fragments.QueryPersonFragment;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 return true;
             case R.id.page_4:
                 inflateFragment(new SettingsFragment());
+                return true;
+            case R.id.page_5:
+                inflateFragment(new FavoriteFragment());
                 return true;
             default:
                 return false;

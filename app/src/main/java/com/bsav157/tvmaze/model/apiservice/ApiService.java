@@ -31,4 +31,7 @@ public interface ApiService {
     @GET("people/{id}/castcredits?embed=show")
     Call<List<CastCredit>> getCastCredits(@Path("id") int id);
 
+    @GET("shows/{id}")
+    Call<Show> getShow(@Path("id") int id);
+
 }
