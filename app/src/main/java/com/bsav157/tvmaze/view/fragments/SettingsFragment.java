@@ -71,13 +71,10 @@ public class SettingsFragment extends Fragment implements ISettings.View, View.O
         } catch (Exception e){
             Log.e("setViewsFragmentSettings", "Null");
         }
-
     }
 
     @Override
     public void showResponse(boolean response) {
-        Log.e("paso", "paso2");
-
         if(response){
             message.setText(getResources().getString(R.string.change_password_success));
         } else {
@@ -90,7 +87,6 @@ public class SettingsFragment extends Fragment implements ISettings.View, View.O
         if(view.getId() == R.id.button_settings_password){
             String l;
             String n;
-            Log.e("paso", "paso");
             if(!comparePasswords()){
                 message.setText(getResources().getString(R.string.password_equals));
             } else {
@@ -129,7 +125,6 @@ public class SettingsFragment extends Fragment implements ISettings.View, View.O
 
             @Override
             public void onTextChanged(CharSequence text, int start, int before, int count) {
-                Log.e("textWatcher", start + " -- " + before + " -- " + count);
                 if(text.length() < 4){
                     message.setText(getResources().getString(R.string.password_short));
                     button.setEnabled(false);

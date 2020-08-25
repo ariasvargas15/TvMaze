@@ -1,14 +1,2 @@
 
-O
-java:S1128"3Remove this unused import 'android.content.Intent'.(³ğ‹G8÷ê‡Â.
-]	java:S110"<This class has 9 parents which is greater than 5 authorized.(Ï—³ûÿÿÿÿ8ëñÆÂÁ.
-O
-java:S1128
-"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ÃúñìÁ.
-W
-java:S1128"5Remove this unused import 'android.content.ClipData'.(°ú‚üÿÿÿÿ8ÆïååÁ.
-h	java:S1281"LEnd this switch case with an unconditional break, return or throw statement.(¯Çì–8•úöÂ.
-P
-java:S1128".Remove this unused import 'android.view.View'.(Ø½­äşÿÿÿÿ8ö„ş†Â.
-t
-java:S1450"RRemove the "nav" field and declare it as a local variable in the relevant methods.(‘§ìúÿÿÿÿ8ÏÄµ‡Â.
+]	java:S110"<This class has 9 parents which is greater than 5 authorized.(Ï—³ûÿÿÿÿ8ëñÆÂÁ.
