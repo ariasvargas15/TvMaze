@@ -12,7 +12,7 @@ TvMaze is a project to handle the TvMaze API to display and search for TV Series
 
 ## Usage
 
-In the distribution folder there is an apk of the aplication
+In the distribution folder there is an apk of the application
 
 ### Home
 
