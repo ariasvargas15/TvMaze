@@ -12,6 +12,8 @@ TvMaze is a project to handle the TvMaze API to display and search for TV Series
 
 ## Usage
 
+In the distribution folder there is an apk of the aplication
+
 ### Home
 
 Lists all series from the API and allows seeing all their details and list of episodes.
