@@ -35,13 +35,27 @@
                             android:backgroundTint="@color/White"
                             android:maxLines="1"
                             android:maxLength="35"
-                            android:imeOptions="actionSearch"
-                            android:hint="@string/search_bar"/>
+                            android:imeOptions="actionSearch">
+                        </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
                 </RelativeLayout>
 
             </RelativeLayout>
         </LinearLayout>
+        <TextView
+            android:id="@+id/message_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAllCaps="true"
+            android:text="@string/message_search"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="22sp"
+            android:paddingTop="100dp"
+            android:visibility="gone"
+            android:paddingHorizontal="10dp"
+            />
+
         <androidx.recyclerview.widget.RecyclerView
             android:paddingHorizontal="5dp"
             android:id="@+id/list_search"

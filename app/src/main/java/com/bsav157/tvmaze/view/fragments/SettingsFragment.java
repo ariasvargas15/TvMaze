@@ -77,6 +77,9 @@ public class SettingsFragment extends Fragment implements ISettings.View, View.O
     public void showResponse(boolean response) {
         if(response){
             message.setText(getResources().getString(R.string.change_password_success));
+            lastP.setText("");
+            newP.setText("");
+            confirmP.setText("");
         } else {
             message.setText(getResources().getString(R.string.last_password_incorrect));
         }
@@ -126,7 +129,7 @@ public class SettingsFragment extends Fragment implements ISettings.View, View.O
             @Override
             public void onTextChanged(CharSequence text, int start, int before, int count) {
                 if(text.length() < 4){
-                    message.setText(getResources().getString(R.string.password_short));
+                    if(text.length() > 0) message.setText(getResources().getString(R.string.password_short));
                     button.setEnabled(false);
                     confirmP.setEnabled(false);
                 } else {

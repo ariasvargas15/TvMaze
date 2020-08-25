@@ -37,7 +37,8 @@
                     android:textColor="@color/Black"
                     android:textSize="18sp"
                     android:text="@string/series_has_participated"
-                    android:textAllCaps="true"/>
+                    android:textAllCaps="true"
+                    android:layout_marginVertical="10dp"/>
                 <androidx.recyclerview.widget.RecyclerView
                     android:paddingHorizontal="5dp"
                     android:id="@+id/shows_person_acts"

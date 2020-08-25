@@ -37,6 +37,7 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
     private SearchPresenter presenter;
     @BindView(R.id.search) EditText searchEditText;
     @BindView(R.id.list_search) RecyclerView recycler;
+    @BindView(R.id.message_search) TextView message;
     private AlertDialog dialog;
 
     public QueryFragment() {
@@ -50,6 +51,7 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
 
         searchEditText.setInputType(InputType.TYPE_CLASS_TEXT);
         searchEditText.setOnEditorActionListener(this);
+        searchEditText.setHint(getResources().getString(R.string.search_bar_shows));
 
         presenter = new SearchPresenter(this);
 
@@ -64,6 +66,7 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
     public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
         boolean action = false;
         if (i == EditorInfo.IME_ACTION_SEARCH) {
+            message.setVisibility(View.GONE);
             InputMethodManager inputMethodManager = (InputMethodManager) textView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             assert inputMethodManager != null;
             inputMethodManager.hideSoftInputFromWindow(textView.getWindowToken(), 0);
@@ -77,17 +80,21 @@ public class QueryFragment extends Fragment implements ISearchShow.View, TextVie
 
     @Override
     public void showSearch(final ArrayList<Show> shows) {
-        GridLayoutManager grid = new GridLayoutManager(getContext(), 2);
-        recycler.setLayoutManager(grid);
-        ShowAdapter adapter = new ShowAdapter(shows, new RecyclerViewOnItemClickListener() {
-            @Override
-            public void onClick(View v, int position) {
-                searchEditText.setText("");
-                assert getFragmentManager() != null;
-                getFragmentManager().beginTransaction().replace(R.id.content, InfoShowFragment.newInstance(shows.get(position))).addToBackStack(null).commit();
-            }
-        });
-        recycler.setAdapter(adapter);
+        if (shows.isEmpty()){
+            message.setVisibility(View.VISIBLE);
+        } else {
+            GridLayoutManager grid = new GridLayoutManager(getContext(), 2);
+            recycler.setLayoutManager(grid);
+            ShowAdapter adapter = new ShowAdapter(shows, new RecyclerViewOnItemClickListener() {
+                @Override
+                public void onClick(View v, int position) {
+                    searchEditText.setText("");
+                    assert getFragmentManager() != null;
+                    getFragmentManager().beginTransaction().replace(R.id.content, InfoShowFragment.newInstance(shows.get(position))).addToBackStack(null).commit();
+                }
+            });
+            recycler.setAdapter(adapter);
+        }
         dialog.dismiss();
     }
 }

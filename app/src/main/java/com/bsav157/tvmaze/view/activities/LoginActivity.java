@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity implements ILogin.View, Vie
     @BindView(R.id.password) TextInputEditText input;
     @BindView(R.id.login_button) Button button;
     @BindView(R.id.message_info_login) TextView message;
+    @BindView(R.id.fingerprint_icon) View fingerprint;
     private LoginPresenter presenter;
 
     @Override
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements ILogin.View, Vie
         launchBiometricManager();
         presenter = new LoginPresenter(this);
         button.setOnClickListener(this);
+        fingerprint.setOnClickListener(this);
     }
 
     private void launchBiometricManager() {
@@ -79,6 +81,7 @@ public class LoginActivity extends AppCompatActivity implements ILogin.View, Vie
                 break;
             case BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE:
                 Log.e("BiometricErrorNoHardware", "No biometric features available on this device.");
+                fingerprint.setVisibility(View.GONE);
                 break;
             case BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE:
                 Log.e("BiometricErrorHWUnavailable", "Biometric features are currently unavailable.");
@@ -112,6 +115,9 @@ public class LoginActivity extends AppCompatActivity implements ILogin.View, Vie
     public void onClick(View view) {
         if(view.getId() == R.id.login_button){
             validateText();
+        }
+        if (view.getId() == R.id.fingerprint_icon){
+            launchBiometricManager();
         }
     }
 

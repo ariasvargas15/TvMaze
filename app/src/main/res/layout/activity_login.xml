@@ -86,8 +86,15 @@
                     android:textColor="#FFFF"
                     android:paddingHorizontal="25dp"
                     >
-
                 </Button>
+                <View
+                    android:id="@+id/fingerprint_icon"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/fingerprint_dialog_fp_to_error">
+
+                </View>
 
 
 

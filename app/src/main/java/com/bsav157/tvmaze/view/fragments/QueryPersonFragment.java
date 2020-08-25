@@ -37,6 +37,7 @@ public class QueryPersonFragment extends Fragment implements ISearchPerson.View,
     private SearchPersonPresenter presenter;
     @BindView(R.id.search) EditText searchEditText;
     @BindView(R.id.list_search) RecyclerView recycler;
+    @BindView(R.id.message_search) TextView message;
     private AlertDialog dialog;
 
     public QueryPersonFragment() {
@@ -50,6 +51,7 @@ public class QueryPersonFragment extends Fragment implements ISearchPerson.View,
 
         searchEditText.setInputType(InputType.TYPE_CLASS_TEXT);
         searchEditText.setOnEditorActionListener(this);
+        searchEditText.setHint(getResources().getString(R.string.search_bar_people));
 
         presenter = new SearchPersonPresenter(this);
 
@@ -64,6 +66,7 @@ public class QueryPersonFragment extends Fragment implements ISearchPerson.View,
     public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
         boolean action = false;
         if (i == EditorInfo.IME_ACTION_SEARCH) {
+            message.setVisibility(View.GONE);
             InputMethodManager inputMethodManager = (InputMethodManager) textView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             assert inputMethodManager != null;
             inputMethodManager.hideSoftInputFromWindow(textView.getWindowToken(), 0);
@@ -76,17 +79,21 @@ public class QueryPersonFragment extends Fragment implements ISearchPerson.View,
 
     @Override
     public void showSearch(final ArrayList<Person> people) {
-        GridLayoutManager grid = new GridLayoutManager(getContext(), 2);
-        recycler.setLayoutManager(grid);
-        PersonAdapter adapter = new PersonAdapter(people, new RecyclerViewOnItemClickListener() {
-            @Override
-            public void onClick(View v, int position) {
-                searchEditText.setText("");
-                assert getFragmentManager() != null;
-                getFragmentManager().beginTransaction().replace(R.id.content, InfoPeopleFragment.newInstance(people.get(position))).addToBackStack(null).commit();
-            }
-        });
-        recycler.setAdapter(adapter);
+        if(people.isEmpty()){
+            message.setVisibility(View.VISIBLE);
+        } else {
+            GridLayoutManager grid = new GridLayoutManager(getContext(), 2);
+            recycler.setLayoutManager(grid);
+            PersonAdapter adapter = new PersonAdapter(people, new RecyclerViewOnItemClickListener() {
+                @Override
+                public void onClick(View v, int position) {
+                    searchEditText.setText("");
+                    assert getFragmentManager() != null;
+                    getFragmentManager().beginTransaction().replace(R.id.content, InfoPeopleFragment.newInstance(people.get(position))).addToBackStack(null).commit();
+                }
+            });
+            recycler.setAdapter(adapter);
+        }
         dialog.dismiss();
     }
 }
