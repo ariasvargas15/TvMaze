@@ -6,7 +6,7 @@ TvMaze is a project to handle the TvMaze API to display and search for TV Series
 
 - [x] Lists and searches series and its episodes
 - [x] Lists and searches people and the series where they acted
-- [x] Saves, deletes and lists favorite series
+- [x] Saves, deletes and lists alphabetically the favorite series
 - [x] Authentication with PIN and Biometric(fingerprint)
 
 
